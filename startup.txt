@@ -1,0 +1,28 @@
+*title The Brownie’s Conundrum
+*author Chrissy Addy
+*scene_list
+    startup
+    prologue
+    act_one
+    act_two
+    act_three
+    the_end
+ 
+*create variable_name default_value
+*create name “Brundle”
+*create gender "male"
+*create trait “Normal”
+*create shinies 0
+ 
+*comment Possible traits follow.
+
+*create unconventional false
+
+ 
+*comment Inventory items follow.
+ 
+ 
+*comment Event triggers follow.
+ 
+ 
+*comment Ending triggers follow.

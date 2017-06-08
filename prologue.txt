@@ -1,0 +1,106 @@
+*comment Introducing the player to the world and making some initial choices.
+ 
+We, the authors of this game, would like to take a moment to welcome you to a world of our own devising. Many years have gone into its creation and yet it is still a world in flux, being refined and expanded even as this is being written.
+ *page_break Uh huh.
+You are a Brownie. We must take this opportunity to apologize to you for this fact. Brownies are not the prettiest or most popular of creatures. They live in a world not meant for people of their size. It is a hard life, but most Brownies are happy by nature so they don’t mind.
+ 
+Let’s start with the basics. 
+
+*page_break Okay.
+
+*gosub set_gender
+*gosub set_name
+*gosub set_trait
+*gosub set_goal
+*goto finalize_character
+
+
+*label set_gender
+You are a...
+*choice
+	#Male.
+		Excellent choice. Had you chosen female you would have found out that all Brownies are male and thus you had no choice to begin with. You obviously have good instincts. We applaud you.
+		*page_break
+	#Female.
+		You’re really a Pixie! Wait, no... Sorry about that. This is a game about a Brownie. We now regret to inform you that all Brownies are male and thus you really had no choice to begin with. That is the nature of birth though, isn’t it?
+		*choice
+			#Okay, so I’m a male.
+				Excellent choice. Had you made that choice from the beginning it would have saved us all some time.
+			#No really, I’m a female!
+				Well, okay. If you feel that strongly about it. You are a female Brownie. Other Brownies think you’re a bit weird, but they generally accept and support your feelings. Brownies are cool like that.
+				*set female true
+				*set unconventional true
+				*page_break Yay!
+*return
+
+#label set_name
+Now that that's settled. What is your name?
+*choice
+	*if ( female = false )
+		#Brundle
+			*set name "Brundle"
+		#Booker
+			*set name "Booker"
+		#Bobkin
+			*set name "Bobkin"
+		#Bounder
+			*set name "Bounder"
+		#Babhan
+			*set name "Babhan"
+
+	*else
+		#Ellette
+			*set name "Ellette"
+		#Alora
+			*set name "Alora"
+		#Ellette
+			*set name "Ellette"
+		#Ellette
+			*set name "Ellette"
+		#Ellette
+			*set name "Ellette"
+		#I don't like any of those options.
+			Okay then. What would you prefer?
+			*input_text name
+		
+Nice to meet you ${name}.
+
+*return
+
+#label set_trait
+We'd like to know more about you. Brownies are all pretty similar by nature, but that doesn't mean they're all exactly the same.
+
+*choice
+	#
+	
+*return
+
+*label set_goal
+And what would you say is your biggest ambition in life?
+
+*choice
+	#
+	
+*return
+
+#label finalize_character
+So, let's make sure we got that all right.
+
+*page_break Okay.
+
+*if (gender = female)
+	You are a female Brownie...
+	*choice
+		#Yep.
+		#No! I changed my mind!
+			Okay then, let's try that again.
+			*gosub set_gender
+*else
+	You are a Brownie...
+	
+	*page break Yes...
+
+Great! Then we welcome you to...
+
+A Brownie's Conundrum
+*finish Let's go!
